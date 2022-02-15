@@ -844,6 +844,8 @@ def test_44_check_nfs_xattr_support(request):
                 xattr_val = n.getxattr("testdir", "user.testxattr2")
                 assert xattr_val == "the_contents2" 
 
+            sleep(10)
+
 
 def test_51_stoping_nfs_service(request):
     depends(request, ["pool_04"], scope="session")
