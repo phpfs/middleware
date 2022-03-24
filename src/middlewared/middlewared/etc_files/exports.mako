@@ -68,11 +68,10 @@
             )
             raise FileShouldNotExist()
 
-        if maproot:
-            params.extend(maproot)
-
         if map_ids['maproot_user'] == 0 and map_ids['maproot_group'] == 0:
             params.append('no_root_squash')
+        else:
+            params.extend(maproot)
 
         if config['allow_nonroot']:
             params.append("insecure")
